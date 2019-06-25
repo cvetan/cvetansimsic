@@ -37,14 +37,6 @@ class User extends Authenticatable
         'is_admin' => 'boolean'
     ];
 
-//    /**
-//     * @return bool
-//     */
-//    public function getIsAdminAttribute()
-//    {
-//        return $this->is_admin === 1;
-//    }
-
     /**
      * @param string $password
      */
