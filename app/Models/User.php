@@ -4,18 +4,17 @@ namespace App\Models;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Hash;
 
 class User extends Authenticatable
 {
     use Notifiable;
 
     /**
-     * The attributes that are mass assignable.
-     *
      * @var array
      */
-    protected $fillable = [
-        'name', 'email', 'password',
+    protected $guarded = [
+        'id', 'created_at', 'updated_at'
     ];
 
     /**
@@ -34,13 +33,22 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'is_admin' => 'boolean'
     ];
 
+//    /**
+//     * @return bool
+//     */
+//    public function getIsAdminAttribute()
+//    {
+//        return $this->is_admin === 1;
+//    }
+
     /**
-     * @return bool
+     * @param string $password
      */
-    public function getIsAdminAttribute()
+    public function setPasswordAttribute($password)
     {
-        return $this->is_admin === 1;
+        $this->attributes['password'] = Hash::make($password);
     }
 }
