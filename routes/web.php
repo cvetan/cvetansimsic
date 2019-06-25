@@ -12,5 +12,10 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $name = 'Cvetan simsic';
+    return view('welcome', compact('name'));
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

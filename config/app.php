@@ -174,8 +174,8 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        App\Providers\IdeHelperServiceProvider::class
-
+        App\Providers\IdeHelperServiceProvider::class,
+        App\Providers\ModelMakeExtensionServiceProvider::class
     ],
 
     /*
