@@ -1,0 +1,3 @@
+<component name="DependencyValidationManager">
+  <scope name="Migrations" pattern="file[cvetansimsic]:database/migrations//*" />
+</component>
