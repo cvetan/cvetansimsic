@@ -11,7 +11,14 @@ const mix = require('laravel-mix');
  |
  */
 
+/**
+ * ========= Default tasks from Laravel installation =========
+ */
 mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css');
 
-mix.less('resources/less/adminto/adminto.less', 'public/css/adminto.css');
+/**
+ * ========= Admin tasks ===
+ */
+mix.less('resources/less/adminto/adminto.less', 'public/css/adminto.css')
+    .copy('resources/images/adminto/favicon.ico', 'public/images/favicon.ico');
