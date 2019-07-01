@@ -27,3 +27,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
         return view('welcome');
     });
 });
+
+Route::get('/admin', function () {
+    return view('layouts.admin');
+});
