@@ -10,11 +10,13 @@
     <link rel="shortcut icon" href="{{ asset('images/favicon.ico') }}">
 
     <!-- App title -->
-    <title>Dashboard :: Welcome</title>
+    <title>@yield('title', 'Dashboard :: Welcome')</title>
 
     <!-- App CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" href="{{ asset('css/adminto.css') }}">
+
+    @yield('css')
 
     <!-- HTML5 Shiv and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -39,8 +41,7 @@
         <div class="topbar-left">
             <a href="/" class="logo">
                 <span>
-                    Admin
-                    <span>to</span>
+                    Admin<span>to</span>
                 </span>
                 <i class="zmdi zmdi-layers"></i>
             </a>
@@ -58,37 +59,11 @@
                         </button>
                     </li>
                     <li>
-                        <h4 class="page-title">Blank Page</h4>
+                        <h4 class="page-title">@yield('pageTitle', 'Dashboard :: Welcome')</h4>
                     </li>
                 </ul>
 
-                <!-- Right(Notification and Searchbox -->
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <!-- Notification -->
-                        <div class="notification-box">
-                            <ul class="list-inline m-b-0">
-                                <li>
-                                    <a href="javascript:void(0);"
-                                       class="right-bar-toggle">
-                                        <i class="zmdi zmdi-notifications-none"></i>
-                                    </a>
-                                    <div class="noti-dot">
-                                        <span class="dot"></span>
-                                        <span class="pulse"></span>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- End Notification bar -->
-                    </li>
-{{--                    <li class="hidden-xs">--}}
-{{--                        <form role="search" class="app-search">--}}
-{{--                            <input type="text" placeholder="Search..." class="form-control">--}}
-{{--                            <a href=""><i class="fa fa-search"></i></a>--}}
-{{--                        </form>--}}
-{{--                    </li>--}}
-                </ul>
+                @include('components.admin.notification-trigger-holder')
 
             </div><!-- end container -->
         </div><!-- end navbar -->
@@ -99,50 +74,9 @@
     <!-- ========== Left Sidebar Start ========== -->
     <div class="left side-menu">
         <div class="sidebar-inner slimscrollleft">
+            @include('components.admin.user')
 
-            <!-- User -->
-            <div class="user-box">
-                <div class="user-img">
-                    <img src="{{ asset('images/users/avatar-1.jpg') }}"
-                         alt="user-img" title="Mat Helme"
-                         class="img-circle img-thumbnail img-responsive">
-                    <div class="user-status offline"><i
-                            class="zmdi zmdi-dot-circle"></i></div>
-                </div>
-                <h5><a href="#">Mat Helme</a></h5>
-                <ul class="list-inline">
-                    <li>
-                        <a href="#">
-                            <i class="zmdi zmdi-settings"></i>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#" class="text-custom">
-                            <i class="zmdi zmdi-power"></i>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <!-- End User -->
-
-            <!--- Sidemenu -->
-            <div id="sidebar-menu">
-                <ul>
-                    <li class="text-muted menu-title">Navigation</li>
-
-                    <li>
-                        <a href="/" class="waves-effect">
-                            <i class="zmdi zmdi-view-dashboard"></i>
-                            <span> Dashboard </span>
-                        </a>
-                    </li>
-                </ul>
-                <div class="clearfix"></div>
-            </div>
-            <!-- Sidebar -->
-            <div class="clearfix"></div>
-
+            @include('components.admin.sidebar')
         </div>
 
     </div>
@@ -158,6 +92,7 @@
             <div class="container">
 
                 <div class="row">
+                    @yield('content', 'No content for this page')
                 </div>
                 <!-- End row -->
 
@@ -180,27 +115,7 @@
 
     <!-- Right Sidebar -->
     <div class="side-bar right-bar">
-        <a href="javascript:void(0);" class="right-bar-toggle">
-            <i class="zmdi zmdi-close-circle-o"></i>
-        </a>
-        <h4 class="">Notifications</h4>
-        <div class="notification-list nicescroll">
-            <ul class="list-group list-no-border user-list">
-                <li class="list-group-item">
-                    <a href="#" class="user-list-item">
-                        <div class="avatar">
-                            <img src="{{ asset('images/users/avatar-2.jpg') }}" alt="">
-                        </div>
-                        <div class="user-desc">
-                            <span class="name">Michael Zenaty</span>
-                            <span
-                                class="desc">There are new settings available</span>
-                            <span class="time">2 hours ago</span>
-                        </div>
-                    </a>
-                </li>
-            </ul>
-        </div>
+        @include('components.admin.notifications')
     </div>
     <!-- /Right-bar -->
 
@@ -215,5 +130,6 @@
 <!-- jQuery  -->
 <script src="{{ asset('js/admin-vendor.js') }}"></script>
 
+@yield('js')
 </body>
 </html>
