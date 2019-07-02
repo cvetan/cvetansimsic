@@ -1,11 +1,9 @@
 /node_modules
-/public/hot
-/public/storage
-/public/css
-/public/images
-/public/js
-/public/fonts
-/public/mix-manifest.json
+/public/*
+!/public/index.php
+!/public/favicon.ico
+!/public/robots.txt
+!/public/.htaccess
 /storage/*.key
 /vendor
 .env

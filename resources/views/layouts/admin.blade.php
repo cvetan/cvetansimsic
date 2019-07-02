@@ -209,7 +209,7 @@
 
 
 <script>
-    var resizefunc = [];
+    let resizefunc = [];
 </script>
 
 <!-- jQuery  -->
