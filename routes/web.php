@@ -28,6 +28,12 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     });
 });
 
-Route::get('/admin', function () {
-    return view('layouts.admin');
+Route::namespace('Admin')->prefix('admin')->as('admin.')->group(function() {
+    Route::get('/', 'DashboardController@index')->name('dashboard');
+
+    Route::get('/login', 'Auth\LoginController@showLoginForm')->name('login');
+
+    Route::post('/login', 'Auth\LoginController@login')->name('do_login');
+
+    Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
 });
