@@ -90,9 +90,12 @@
         <!-- Start content -->
         <div class="content">
             <div class="container">
-
                 <div class="row">
-                    @yield('content', 'No content for this page')
+                    <div class="col-sm-12">
+                        <div class="card-box">
+                            @yield('content', 'No content for this page')
+                        </div>
+                    </div>
                 </div>
                 <!-- End row -->
 
@@ -129,6 +132,7 @@
 
 <!-- jQuery  -->
 <script src="{{ asset('js/admin-vendor.js') }}"></script>
+<script src="{{ asset('js/admin.js') }}"></script>
 
 @yield('js')
 </body>

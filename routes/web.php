@@ -36,4 +36,6 @@ Route::namespace('Admin')->prefix('admin')->as('admin.')->group(function() {
     Route::post('/login', 'Auth\LoginController@login')->name('do_login');
 
     Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
+
+    Route::resource('pages', 'PagesController');
 });

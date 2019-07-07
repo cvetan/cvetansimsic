@@ -36,6 +36,7 @@ mix.less('resources/less/adminto/adminto.less', 'public/css/adminto.css')
     .copy('resources/js/adminto/plugins/select2/dist/', 'public/plugins/select2', false)
     .copy('resources/js/adminto/plugins/multiselect/', 'public/plugins/multiselect', false)
     .copy('resources/js/adminto/plugins/toastr/', 'public/plugins/toastr', false)
+
     .combine([
         'resources/js/adminto/jquery.min.js',
         'resources/js/adminto/bootstrap.min.js',
@@ -72,4 +73,6 @@ mix.less('resources/less/adminto/adminto.less', 'public/css/adminto.css')
         'resources/js/adminto/plugins/datatables/fixedHeader.bootstrap.min.css',
         'resources/js/adminto/plugins/datatables/responsive.bootstrap.min.css',
         'resources/js/adminto/plugins/datatables/scroller.bootstrap.min.css'
-    ], 'public/plugins/datatables/datatables.css');
+    ], 'public/plugins/datatables/datatables.css')
+
+    .combine(['resources/js/admin/*'], 'public/js/admin.js');

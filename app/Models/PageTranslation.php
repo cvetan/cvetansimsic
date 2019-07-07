@@ -21,6 +21,11 @@ class PageTranslation extends Model
     protected $guarded = [];
 
     /**
+     * @var bool
+     */
+    public $timestamps = false;
+
+    /**
      * Return the sluggable configuration array for this model.
      *
      * @return array
