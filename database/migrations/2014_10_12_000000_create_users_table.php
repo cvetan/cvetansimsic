@@ -20,6 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('username')->unique();
             $table->string('email')->unique();
             $table->string('slug')->unique();
+            $table->string('avatar')->nullable();
             $table->boolean('is_admin')->unsigned()->default(false);
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

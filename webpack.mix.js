@@ -47,9 +47,11 @@ mix.less('resources/less/adminto/adminto.less', 'public/css/adminto.css')
         'resources/js/adminto/waves.js',
         'resources/js/adminto/jquery.nicescroll.js',
         'resources/js/adminto/jquery.sclollTo.min.js',
+    ], 'public/js/adminto-vendor.js')
+    .combine([
         'resources/js/adminto/jquery.core.js',
         'resources/js/adminto/jquery.app.js'
-    ], 'public/js/admin-vendor.js')
+    ], 'public/js/adminto-app.js')
 
     .combine([
         'resources/js/adminto/plugins/datatables/jquery.dataTables.min.js',

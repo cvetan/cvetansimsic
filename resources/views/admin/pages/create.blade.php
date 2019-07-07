@@ -5,7 +5,15 @@
 @section('pageTitle', __('pages.create_new_page'))
 
 @section('content')
-    <form action="" class="form-horizontal">
+    {{ Form::open(['route' => 'admin.pages.store']) }}
         @include('admin.pages.partials._form')
-    </form>
+    {{ Form::close() }}
+@endsection
+
+@section('css')
+    <link rel="stylesheet" href="{{ asset('plugins/switchery/switchery.min.css') }}">
+@endsection
+
+@section('js')
+    <script src="{{ asset('plugins/switchery/switchery.min.js') }}"></script>
 @endsection

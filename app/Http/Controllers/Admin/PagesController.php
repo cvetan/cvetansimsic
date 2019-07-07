@@ -15,7 +15,7 @@ class PagesController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.pages.index');
     }
 
     /**
@@ -36,7 +36,7 @@ class PagesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd($request->all());
     }
 
     /**

@@ -9,6 +9,13 @@
                 <span> {{ __('navigation.dashboard') }} </span>
             </a>
         </li>
+
+        <li>
+            <a href="{{ route('admin.pages.index') }}" class="waves-effect">
+                <i class="zmdi zmdi-file"></i>
+                <span> {{ __('pages.page_list') }}</span>
+            </a>
+        </li>
     </ul>
     <div class="clearfix"></div>
 </div>

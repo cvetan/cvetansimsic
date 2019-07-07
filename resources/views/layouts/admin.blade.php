@@ -131,9 +131,9 @@
 </script>
 
 <!-- jQuery  -->
-<script src="{{ asset('js/admin-vendor.js') }}"></script>
-<script src="{{ asset('js/admin.js') }}"></script>
-
+<script src="{{ asset('js/adminto-vendor.js') }}"></script>
 @yield('js')
+<script src="{{ asset('js/adminto-app.js') }}"></script>
+<script src="{{ asset('js/admin.js') }}"></script>
 </body>
 </html>
