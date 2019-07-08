@@ -177,7 +177,8 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         App\Providers\IdeHelperServiceProvider::class,
-        App\Providers\ModelMakeExtensionServiceProvider::class
+        App\Providers\ModelMakeExtensionServiceProvider::class,
+        App\Providers\FormServiceProvider::class
     ],
 
     /*
