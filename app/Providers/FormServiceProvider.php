@@ -24,6 +24,7 @@ class FormServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        Form::component('bsText', 'components.form.bstext', ['name', 'label', 'id']);
+        Form::component('bsSwitchery', 'components.form.bsswitchery', ['name', 'label', 'id', 'color' => '#167CCB']);
     }
 }

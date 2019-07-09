@@ -15,6 +15,5 @@
 @endsection
 
 @section('js')
-    <script src="{{ asset('plugins/switchery/switchery.min.js') }}"></script>
-    <script src="{{ asset('plugins/ckeditor-4.12.1/ckeditor.js') }}"></script>
+    @include('admin.pages.partials._js')
 @endsection
