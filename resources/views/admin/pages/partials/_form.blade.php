@@ -14,7 +14,9 @@
 
     <div class="tab-content">
         @foreach(LaravelLocalization::getSupportedLanguagesKeys() as $code)
-
+            <div class="tab-pane fade" id="tab-{{ $code }}">
+                <textarea name="content_{{ $code }}" id="content-{{ $code }}" class="ckeditor"></textarea>
+            </div>
         @endforeach
     </div>
 </div>
