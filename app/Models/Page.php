@@ -2,20 +2,37 @@
 
 namespace App\Models;
 
+use Astrotomic\Translatable\Translatable;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Page extends Model
 {
+    use Translatable;
+
+    /**
+     * @var array
+     */
+    public $translatedAttributes = [
+        'name',
+        'slug',
+        'content',
+        'title_tag',
+        'description_tag'
+    ];
+
+    /**
+     * @var array
+     */
     protected $casts = [
         'active' => 'boolean'
     ];
 
     /**
-     * @return HasMany
+     * @var array
      */
-    public function translations(): HasMany
-    {
-        return $this->hasMany('App\Models\PageTranslation');
-    }
+    protected $guarded = [
+        'id',
+        'created_at',
+        'updated_at'
+    ];
 }

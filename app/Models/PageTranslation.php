@@ -4,26 +4,20 @@ namespace App\Models;
 
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class PageTranslation extends Model
 {
     use Sluggable;
 
     /**
-     * @var array
-     */
-    protected $touches = ['page'];
-
-    /**
-     * @var array
-     */
-    protected $guarded = [];
-
-    /**
      * @var bool
      */
     public $timestamps = false;
+
+    /**
+     * @var array
+     */
+    protected $guarded = ['id'];
 
     /**
      * Return the sluggable configuration array for this model.
@@ -37,13 +31,5 @@ class PageTranslation extends Model
                 'source' => 'name'
             ]
         ];
-    }
-
-    /**
-     * @return BelongsTo
-     */
-    public function page(): BelongsTo
-    {
-        return $this->belongsTo('App\Models\Page');
     }
 }
