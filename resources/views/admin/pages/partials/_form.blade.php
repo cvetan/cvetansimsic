@@ -10,13 +10,15 @@
     <div class="tab-content">
         @foreach(LaravelLocalization::getSupportedLanguagesKeys() as $code)
             <div class="tab-pane fade" id="tab-{{ $code }}">
-                {{ Form::bsText("name_{$code}", 'Name', "name-{$code}") }}
+                {{ Form::bsText("name_{$code}", __('general.name'), "name-{$code}") }}
 
-                <div class="form-group">
-                    {{ Form::label("content-{$code}", "Content", ['class' => 'control-label']) }}
+                {{ Form::bsText("slug_{$code}", __('general.slug'), "slug-{$code}") }}
 
-                    <textarea name="content_{{ $code }}" id="content-{{ $code }}" class="ckeditor form-control"></textarea>
-                </div>
+                {{ Form::bsCkeditor("content_{$code}", __('general.content'), "content-{$code}") }}
+
+                {{ Form::bsText("title_tag_{$code}", __('general.title_tag'), "title-tag-{$code}") }}
+
+                {{ Form::bsTextarea("description_tag_{$code}", __('general.description_tag'), "description-tag-{$code}") }}
             </div>
         @endforeach
     </div>

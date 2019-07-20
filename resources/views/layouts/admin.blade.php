@@ -63,7 +63,7 @@
                     </li>
                 </ul>
 
-                @include('components.admin.notification-trigger-holder')
+                @include('components.admin.notification_trigger_holder')
 
             </div><!-- end container -->
         </div><!-- end navbar -->
@@ -92,6 +92,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12">
+                        @include('components.admin.flash')
+
                         <div class="card-box">
                             @yield('content', 'No content for this page')
                         </div>
