@@ -24,7 +24,8 @@ class FormServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Form::component('bsText', 'components.form.bstext', ['name', 'label', 'id']);
-        Form::component('bsSwitchery', 'components.form.bsswitchery', ['name', 'label', 'id', 'color' => '#167CCB']);
+        Form::component('bsText', 'components.form.bs_text', ['name', 'label', 'id', 'value' => null]);
+        Form::component('bsTextarea', 'components.form.bs_textarea', ['name', 'label', 'id', 'value' => null]);
+        Form::component('bsSwitchery', 'components.form.bs_switchery', ['name', 'label', 'id', 'color' => '#167CCB', 'checked']);
     }
 }

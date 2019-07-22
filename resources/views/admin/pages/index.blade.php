@@ -5,17 +5,16 @@
 @section('pageTitle', __('pages.page_list'))
 
 @section('content')
-    <div class="table-responsive">
-        <table class="table">
-            <thead>
-            <tr>
-                <th>#</th>
-                <th>Name</th>
-                <th>Status</th>
-                <th>Title</th>
-                <th>Actions</th>
-            </tr>
-            </thead>
-        </table>
-    </div>
+    @if($pages->isEmpty())
+        <div class="alert alert-info">
+            {{ __('pages.no_pages_message') }}
+
+            <a href="{{ route('admin.pages.create') }}">
+                {{ __('general.create_one') }}
+            </a>
+        </div>
+
+    @else
+
+    @endif
 @endsection
