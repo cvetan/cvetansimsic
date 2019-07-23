@@ -12,13 +12,7 @@
             <div class="tab-pane fade" id="tab-{{ $code }}">
                 {{ Form::bsText("name_{$code}", __('general.name'), "name-{$code}", isset($page) ? $page->translate($code)->name : null) }}
                 {{ Form::bsText("slug_{$code}", __('general.slug'), "slug-{$code}", isset($page) ? $page->translate($code)->slug : null) }}
-
-                <div class="form-group">
-                    {{ Form::label("content-{$code}", __('general.content'), ['class' => 'control-label']) }}
-
-                    <textarea name="content_{{ $code }}" id="content-{{ $code }}" class="ckeditor form-control">{{ isset($page) ? $page->translate($code)->content : null }}</textarea>
-                </div>
-
+                {{ Form::bsCkeditor("content_{$code}", __('general.content'), "content-{$code}", isset($page) ? $page->translate($code)->content : null) }}
                 {{ Form::bsText("title_tag_{$code}", __('general.title_tag'), "title-tag-{$code}", isset($page) ? $page->translate($code)->title_tag : null) }}
                 {{ Form::bsTextarea("description_tag_{$code}", __('general.description_tag'), "description-tag-{$code}", isset($page) ? $page->translate($code)->description_tag : null) }}
             </div>
@@ -27,6 +21,8 @@
 </div>
 
 {{ Form::bsSwitchery('active', 'Page active', 'active', '#167CCB', isset($page) ? $page->active : false) }}
+
+@include('components.form.errors')
 
 <div class="form-group">
     <button class="btn btn-success" type="submit">
