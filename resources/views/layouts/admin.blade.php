@@ -63,7 +63,7 @@
                     </li>
                 </ul>
 
-                @include('components.admin.notification-trigger-holder')
+                @include('components.admin.notification_trigger_holder')
 
             </div><!-- end container -->
         </div><!-- end navbar -->

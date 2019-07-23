@@ -1,6 +1,6 @@
 <?php
 
 return [
-    'menu' => 'Menu',
+    'menu'      => 'Menu',
     'dashboard' => 'Dashboard'
 ];
