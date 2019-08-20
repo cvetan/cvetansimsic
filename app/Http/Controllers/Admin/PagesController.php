@@ -65,16 +65,17 @@ class PagesController extends Controller
         return redirect()->route('admin.pages.index');
     }
 
-//    /**
-//     * Display the specified resource.
-//     *
-//     * @param int $id
-//     *
-//     * @return Response
-//     */
-//    public function show($id)
-//    {
-//    }
+    /**
+     * Display the specified resource.
+     *
+     * @param Page $page
+     *
+     * @return Response
+     */
+    public function show(Page $page)
+    {
+        return $page;
+    }
 
     /**
      * Show the form for editing the specified resource.

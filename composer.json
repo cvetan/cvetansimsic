@@ -12,6 +12,7 @@
         "astrotomic/laravel-translatable": "^11.1",
         "cviebrock/eloquent-sluggable": "^4.8",
         "fideloper/proxy": "^4.0",
+        "laracasts/utilities": "^3.0",
         "laravel/framework": "5.8.*",
         "laravel/tinker": "^1.0",
         "laravelcollective/html": "^5.8",
