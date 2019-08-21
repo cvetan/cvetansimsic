@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
 use App\Http\Requests\StorePageRequest;
 use App\Models\Page;
 use Exception;
@@ -10,7 +9,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Response;
 use LaravelLocalization;
 
-class PagesController extends Controller
+class PagesController extends BaseAdminController
 {
     /**
      * Display a listing of the resource.
