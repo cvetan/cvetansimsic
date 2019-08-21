@@ -37,6 +37,7 @@ mix.less('resources/less/adminto/adminto.less', 'public/css/adminto.css')
     .copy('resources/js/adminto/plugins/multiselect/', 'public/plugins/multiselect', false)
     .copy('resources/js/adminto/plugins/toastr/', 'public/plugins/toastr', false)
     .copy('resources/js/adminto/plugins/ckeditor-4.12.1/', 'public/plugins', false)
+    .copy('resources/js/adminto/plugins/bootstrap-sweetalert/', 'public/plugins', false)
 
     .combine([
         'resources/js/adminto/jquery.min.js',

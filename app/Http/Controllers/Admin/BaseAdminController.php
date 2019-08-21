@@ -13,8 +13,6 @@ class BaseAdminController extends Controller
     public function __construct()
     {
         JavaScript::put([
-            'username' => 'cvetan',
-            'email'    => 'cvetan.simsic@gmail.com'
         ]);
     }
 }

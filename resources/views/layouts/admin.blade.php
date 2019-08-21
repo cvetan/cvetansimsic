@@ -135,8 +135,8 @@
 <!-- jQuery  -->
 <script src="{{ asset('js/adminto-vendor.js') }}"></script>
 @yield('js')
+@include('components.admin.serverjs')
 <script src="{{ asset('js/adminto-app.js') }}"></script>
 <script src="{{ asset('js/admin.js') }}"></script>
-@include('components.admin.serverjs')
 </body>
 </html>
