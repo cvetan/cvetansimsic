@@ -93,7 +93,7 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="card-box">
-                            @include('components.admin.flash')
+                            @include('flash::message')
 
                             @yield('content', 'No content for this page')
 

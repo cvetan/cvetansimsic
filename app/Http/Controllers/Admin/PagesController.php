@@ -58,8 +58,7 @@ class PagesController extends BaseAdminController
 
         Page::create($data);
 
-        session()->flash('flash', __('pages.page_created'));
-        session()->flash('flash_class', 'success');
+        flash(__('pages.page_created'))->success();
 
         return redirect()->route('admin.pages.index');
     }
@@ -116,8 +115,7 @@ class PagesController extends BaseAdminController
 
         $page->update($data);
 
-        session()->flash('flash', __('pages.page_updated'));
-        session()->flash('flash_class', 'success');
+        flash(__('pages.page_updated'))->success();
 
         return redirect()->route('admin.pages.index');
     }
@@ -135,8 +133,7 @@ class PagesController extends BaseAdminController
     {
         $page->delete();
 
-        session()->flash('flash', __('pages.page_deleted'));
-        session()->flash('flash_class', 'success');
+        flash(__('pages.page_deleted'))->success();
 
         return redirect()->route('admin.pages.index');
     }
