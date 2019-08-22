@@ -50,7 +50,7 @@
                                 <span>{{ __('general.edit') }}</span>
                             </a>
 
-                            <a href="#" class="btn btn-danger">
+                        <a href="#" class="btn btn-danger remove-trigger" data-action="{{ route('admin.pages.destroy', ['page' => $page->id])}}">
                                 <i class="fa fa-minus-circle"></i>
                                 <span>{{ __('general.remove') }}</span>
                             </a>

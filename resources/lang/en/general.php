@@ -11,5 +11,7 @@ return [
     'description_tag'  => 'Description tag',
     'preview'          => 'Preview',
     'edit'             => 'Edit',
-    'remove'           => 'Remove'
+    'remove'           => 'Remove',
+    'are_you_sure'     => 'Are you sure?',
+    'yes_remove'       => 'Yes, remove'
 ];

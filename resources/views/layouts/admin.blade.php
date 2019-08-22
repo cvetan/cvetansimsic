@@ -96,6 +96,9 @@
                             @include('components.admin.flash')
 
                             @yield('content', 'No content for this page')
+
+                            {{ Form::open(['method' => 'DELETE', 'class' => 'remove-form']) }}
+                            {{ Form::close()}}
                         </div>
                     </div>
                 </div>

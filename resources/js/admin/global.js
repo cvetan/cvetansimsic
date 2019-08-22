@@ -2,32 +2,39 @@ $(".nav.nav-tabs li:first").addClass("active");
 
 $(".tab-content .tab-pane:first").addClass("in active");
 
-// !function ($) {
-//     "use strict";
+!function ($) {
+    "use strict";
 
-//     var SweetAlert = function () {
-//     };
+    var SweetAlert = function () {
+    };
 
-//     //examples
-//     SweetAlert.prototype.init = function () {
-//         //Danger
-//         $('#danger-alert').click(function () {
-//             swal({
-//                 title: "Are you sure?",
-//                 text: "You will not be able to recover this imaginary file!",
-//                 type: "error",
-//                 showCancelButton: true,
-//                 confirmButtonClass: 'btn-danger waves-effect waves-light',
-//                 confirmButtonText: 'Danger!'
-//             });
-//         });
-//     },
-//         //init
-//         $.SweetAlert = new SweetAlert, $.SweetAlert.Constructor = SweetAlert
-// }(window.jQuery),
+    //examples
+    SweetAlert.prototype.init = function () {
+        $('.remove-trigger').click(function (e) {
+            e.preventDefault();
 
-//     //initializing
-//     function ($) {
-//         "use strict";
-//         $.SweetAlert.init()
-//     }(window.jQuery);
+            $('.remove-form').attr('action', $(this).data('action'));
+
+            swal({
+                title: CvetanSimsic.tr_are_you_sure,
+                text: '',
+                type: "error",
+                showCancelButton: true,
+                confirmButtonClass: 'btn-danger waves-effect waves-light confirm-remove-btn',
+                confirmButtonText: CvetanSimsic.tr_yes_remove
+            }, function(isConfirm) {
+                if (isConfirm) {
+                    $('.remove-form').trigger('submit');
+                }
+            });
+        });
+    },
+        //init
+        $.SweetAlert = new SweetAlert, $.SweetAlert.Constructor = SweetAlert
+}(window.jQuery),
+
+    //initializing
+    function ($) {
+        "use strict";
+        $.SweetAlert.init()
+    }(window.jQuery);
