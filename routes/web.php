@@ -36,4 +36,8 @@ Route::namespace('Admin')->prefix('admin')->as('admin.')->group(function () {
     Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
 
     Route::resource('pages', 'PagesController');
+
+    Route::resource('quote-categories', 'QuoteCategoriesController');
+
+    Route::resource('quotes', 'QuotesController');
 });
