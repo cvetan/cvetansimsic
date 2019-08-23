@@ -23,13 +23,20 @@
         </div>
 
     @else
+        <div>
+            <a href="{{ route('admin.pages.create') }}" class="btn btn-primary">
+                <i class="fa fa-plus"></i>
+                <span>{{ __('general.new') }}</span>
+            </a>
+        </div>
+
         <table class="table table-responsive">
             <thead>
                 <tr>
                     <th>#</th>
-                    <th>Name</th>
-                    <th>Slug</th>
-                    <th>Actions</th>
+                    <th>{{  __('general.name') }}</th>
+                    <th>{{ __('general.slug') }}</th>
+                    <th>{{ __('general.actions') }}</th>
                 </tr>
             </thead>
 
@@ -40,20 +47,48 @@
                         <td>{{ $page->name }}</td>
                         <td>{{ $page->slug }}</td>
                         <td>
-                            <a href="{{ route('admin.pages.show', ['page' => $page->id]) }}" class="btn btn-success" target="_blank">
-                                <i class="fa fa-eye m-r-2"></i>
-                                <span>{{ __('general.preview') }}</span>
-                            </a>
+                            <div class="btn-group hidden-xs">
+                                <a class="btn btn-success" href="{{ route('admin.pages.show', ['page' => $page->id]) }}" target="_blank">
+                                    <i class="fa fa-eye m-r-2"></i>
+                                    <span>{{ __('general.preview') }}</span>
+                                </a>
 
-                            <a href="{{ route('admin.pages.edit', ['page' => $page->id]) }}" class="btn btn-flat btn-warning">
-                                <i class="fa fa-pencil m-r-2"></i>
-                                <span>{{ __('general.edit') }}</span>
-                            </a>
+                                <a href="{{ route('admin.pages.edit', ['page' => $page->id]) }}" class="btn btn-flat btn-warning">
+                                    <i class="fa fa-pencil m-r-2"></i>
+                                    <span>{{ __('general.edit') }}</span>
+                                </a>
 
-                        <a href="#" class="btn btn-danger remove-trigger" data-action="{{ route('admin.pages.destroy', ['page' => $page->id])}}">
-                                <i class="fa fa-minus-circle"></i>
-                                <span>{{ __('general.remove') }}</span>
-                            </a>
+                                <a href="#" class="btn btn-danger remove-trigger" data-action="{{ route('admin.pages.destroy', ['page' => $page->id])}}">
+                                    <i class="fa fa-minus-circle"></i>
+                                    <span>{{ __('general.remove') }}</span>
+                                </a>
+                            </div>
+
+                            <div class="btn-group visible-xs">
+                                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                    {{ __('general.actions') }} <span class="caret"></span>
+                                </button>
+
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="{{ route('admin.pages.show', ['page' => $page->id]) }}" target="_blank">
+                                            {{ __('general.preview') }}
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="{{ route('admin.pages.edit', ['page' => $page->id]) }}">
+                                            {{ __('general.edit') }}
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#" class="remove-trigger" data-action="{{ route('admin.pages.destroy', ['page' => $page->id])}}">
+                                            {{ __('general.remove') }}
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
                         </td>
                     </tr>
                 @endforeach

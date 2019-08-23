@@ -13,5 +13,7 @@ return [
     'edit'             => 'Edit',
     'remove'           => 'Remove',
     'are_you_sure'     => 'Are you sure?',
-    'yes_remove'       => 'Yes, remove'
+    'yes_remove'       => 'Yes, remove',
+    'actions'          => 'Actions',
+    'new'              => 'New'
 ];

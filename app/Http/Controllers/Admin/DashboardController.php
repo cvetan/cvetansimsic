@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\View\View;
 
-class DashboardController extends Controller
+class DashboardController extends BaseAdminController
 {
     /**
      * @return Factory|View
