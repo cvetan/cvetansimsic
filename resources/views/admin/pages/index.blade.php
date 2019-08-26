@@ -47,9 +47,9 @@
                         <td>{{ $page->name }}</td>
                         <td>{{ $page->slug }}</td>
                         <td>
-                            @include('admin.pages.partials.buttons', ['page' => $page])
+                            @include('admin.pages.partials._buttons', ['page' => $page])
 
-                            @include('admin.pages.partials.buttons_xs', ['page' => $page])
+                            @include('admin.pages.partials._buttons_xs', ['page' => $page])
                         </td>
                     </tr>
                 @endforeach

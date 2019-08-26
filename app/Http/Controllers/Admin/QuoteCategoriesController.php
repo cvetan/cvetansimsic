@@ -14,6 +14,7 @@ class QuoteCategoriesController extends Controller
      */
     public function index()
     {
+        return view('admin.quote-categories.index');
     }
 
     /**
@@ -23,6 +24,7 @@ class QuoteCategoriesController extends Controller
      */
     public function create()
     {
+        return view('admin.quote-categories.create');
     }
 
     /**
