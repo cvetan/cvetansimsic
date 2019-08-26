@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreQuoteCategoryRequest;
 use Illuminate\Http\Request;
 
 class QuoteCategoriesController extends Controller
@@ -34,8 +35,9 @@ class QuoteCategoriesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreQuoteCategoryRequest $request)
     {
+        dd($request->all());
     }
 
     /**

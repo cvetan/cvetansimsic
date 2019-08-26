@@ -15,5 +15,6 @@ return [
     'are_you_sure'     => 'Are you sure?',
     'yes_remove'       => 'Yes, remove',
     'actions'          => 'Actions',
-    'new'              => 'New'
+    'new'              => 'New',
+    'icon'             => 'Icon'
 ];
