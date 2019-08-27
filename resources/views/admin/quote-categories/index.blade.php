@@ -4,7 +4,7 @@
 
 @section('pageTitle', __('quote_categories.list'))
 
-@include('admin.partials._sweet_alert');
+@include('admin.partials._sweet_alert')
 
 @section('css')
     <link rel="stylesheet" href="{{ asset('plugins/bootstrap-sweetalert/sweet-alert.css') }}">

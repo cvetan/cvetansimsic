@@ -4,7 +4,7 @@
 
 @section('pageTitle', __('pages.page_list'))
 
-@include('admin.partials._sweet_alert');
+@include('admin.partials._sweet_alert')
 
 @section('content')
     @if($pages->isEmpty())

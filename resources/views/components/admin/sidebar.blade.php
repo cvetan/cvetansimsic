@@ -11,9 +11,23 @@
         </li>
 
         <li>
+            <a href="#">
+                <i class="zmdi zmdi-settings"></i>
+                <span>{{ __('navigation.configuration') }}</span>
+            </a>
+        </li>
+
+        <li>
+            <a href="{{ route('admin.users.index') }}" class="waves-effect">
+                <i class="zmdi zmdi-accounts"></i>
+                <span>{{ __('navigation.users') }}</span>
+            </a>
+        </li>
+
+        <li>
             <a href="{{ route('admin.pages.index') }}" class="waves-effect">
                 <i class="zmdi zmdi-file"></i>
-                <span> {{ __('pages.page_list') }}</span>
+                <span> {{ __('navigation.pages') }}</span>
             </a>
         </li>
 
