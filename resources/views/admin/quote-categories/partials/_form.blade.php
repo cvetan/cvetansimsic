@@ -10,7 +10,7 @@
         <span>{{ __('general.save') }}</span>
     </button>
 
-    <a href="{{ route('admin.pages.index') }}" class="btn btn-danger">
+    <a href="{{ route('admin.quote-categories.index') }}" class="btn btn-danger">
         <i class="fa fa-times m-r-5"></i>
         <span>{{ __('general.cancel') }}</span>
     </a>

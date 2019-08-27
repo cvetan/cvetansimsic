@@ -16,6 +16,28 @@
                 <span> {{ __('pages.page_list') }}</span>
             </a>
         </li>
+
+        <li class="has_sub">
+            <a href="javascript:void(0);" class="waves-effect">
+                <i class="zmdi zmdi-quote"></i>
+                <span>{{ __('navigation.quotes') }}</span>
+                <span class="menu-arrow"></span>
+            </a>
+
+            <ul class="list-unstyled">
+                <li>
+                    <a href="{{ route('admin.quote-categories.index') }}">
+                        {{ __('navigation.quote_categories') }}
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{{ route('admin.quotes.index') }}">
+                        {{ __('navigation.quotes') }}
+                    </a>
+                </li>
+            </ul>
+        </li>
     </ul>
     <div class="clearfix"></div>
 </div>

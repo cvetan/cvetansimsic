@@ -6,7 +6,7 @@ return [
     'edit_page'        => 'Edit page',
     'page_active'      => 'Page active',
     'no_pages_message' => 'There are no created pages.',
-    'page_created'     => 'Page has been created.',
-    'page_updated'     => 'Page has been updated.',
-    'page_deleted'     => 'Page has been deleted.'
+    'created'          => 'Page has been created.',
+    'updated'          => 'Page has been updated.',
+    'removed'          => 'Page has been removed.'
 ];

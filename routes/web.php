@@ -37,7 +37,7 @@ Route::namespace('Admin')->prefix('admin')->as('admin.')->group(function () {
 
     Route::resource('pages', 'PagesController');
 
-    Route::resource('quote-categories', 'QuoteCategoriesController');
+    Route::resource('quote-categories', 'QuoteCategoriesController')->except('show');
 
     Route::resource('quotes', 'QuotesController');
 });

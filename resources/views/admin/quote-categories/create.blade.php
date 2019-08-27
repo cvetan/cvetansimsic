@@ -5,7 +5,7 @@
 @section('pageTitle', __('quote_categories.new'))
 
 @section('content')
-    {{ Form::open(['route' => 'admin.quote-categories.store']) }}
+    {{ Form::open(['route' => 'admin.quote-categories.store', 'autocomplete' => 'off']) }}
         @include('admin.quote-categories.partials._form')
     {{ Form::close() }}
 @endsection
