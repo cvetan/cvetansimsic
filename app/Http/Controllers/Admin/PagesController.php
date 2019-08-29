@@ -42,21 +42,7 @@ class PagesController extends BaseAdminController
      */
     public function store(StorePageRequest $request)
     {
-        $data = [
-            'active' => $request->has('active') ? true : false
-        ];
-
-        foreach (LaravelLocalization::getSupportedLanguagesKeys() as $lang) {
-            $data[$lang] = [
-                'name'            => $request->get("name_{$lang}"),
-                'slug'            => $request->get("slug_{$lang}"),
-                'content'         => $request->get("content_{$lang}"),
-                'title_tag'       => $request->get("title_tag_{$lang}"),
-                'description_tag' => $request->get("description_tag_{$lang}")
-            ];
-        }
-
-        Page::create($data);
+        Page::create($this->formPage($request));
 
         flash(__('pages.created'))->success();
 
@@ -68,7 +54,7 @@ class PagesController extends BaseAdminController
      *
      * @param Page $page
      *
-     * @return Response
+     * @return Page
      */
     public function show(Page $page)
     {
@@ -99,21 +85,7 @@ class PagesController extends BaseAdminController
      */
     public function update(StorePageRequest $request, Page $page)
     {
-        $data = [
-            'active' => $request->has('active') ? true : false
-        ];
-
-        foreach (LaravelLocalization::getSupportedLanguagesKeys() as $lang) {
-            $data[$lang] = [
-                'name'            => $request->get("name_{$lang}"),
-                'slug'            => $request->get("slug_{$lang}"),
-                'content'         => $request->get("content_{$lang}"),
-                'title_tag'       => $request->get("title_tag_{$lang}"),
-                'description_tag' => $request->get("description_tag_{$lang}")
-            ];
-        }
-
-        $page->update($data);
+        $page->update($this->formPage($request));
 
         flash(__('pages.updated'))->success();
 
@@ -136,5 +108,29 @@ class PagesController extends BaseAdminController
         flash(__('pages.removed'))->success();
 
         return redirect()->route('admin.pages.index');
+    }
+
+    /**
+     * @param StorePageRequest $request
+     *
+     * @return array
+     */
+    private function formPage(StorePageRequest $request): array
+    {
+        $data = [
+            'active' => $request->has('active') ? true : false
+        ];
+
+        foreach (LaravelLocalization::getSupportedLanguagesKeys() as $lang) {
+            $data[$lang] = [
+                'name'            => $request->get("name_{$lang}"),
+                'slug'            => $request->get("slug_{$lang}"),
+                'content'         => $request->get("content_{$lang}"),
+                'title_tag'       => $request->get("title_tag_{$lang}"),
+                'description_tag' => $request->get("description_tag_{$lang}")
+            ];
+        }
+
+        return $data;
     }
 }
