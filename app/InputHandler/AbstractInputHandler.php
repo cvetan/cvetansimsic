@@ -15,4 +15,12 @@ abstract class AbstractInputHandler
      * @return array
      */
     abstract public function format(): array;
+
+    /**
+     * @return FormRequest
+     */
+    public function getRequest(): FormRequest
+    {
+        return $this->request;
+    }
 }

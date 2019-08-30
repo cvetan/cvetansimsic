@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\StoreUserRequest;
+use App\InputHandler\UsersInputHandler;
 use App\Models\User;
 use Exception;
-use Illuminate\Http\Request;
+use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\Response;
+use Illuminate\View\View;
 
 class UsersController extends BaseAdminController
 {
@@ -33,12 +34,11 @@ class UsersController extends BaseAdminController
     /**
      * Store a newly created resource in storage.
      *
-     * @param StoreUserRequest $request
-     *
+     * @param UsersInputHandler $inputHandler
      */
-    public function store(StoreUserRequest $request)
+    public function store(UsersInputHandler $inputHandler)
     {
-        dd($request->all());
+        dd($inputHandler->getRequest()->all());
     }
 
     /**
@@ -56,19 +56,25 @@ class UsersController extends BaseAdminController
      * Show the form for editing the specified resource.
      *
      * @param User $user
+     *
+     * @return Factory|View
      */
     public function edit(User $user)
     {
+        return view('admin.users.edit', [
+            'user' => $user
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param Request $request
-     * @param User    $user
+     * @param UsersInputHandler $inputHandler
+     * @param User              $user
      */
-    public function update(Request $request, User $user)
+    public function update(UsersInputHandler $inputHandler, User $user)
     {
+        dd($inputHandler->getRequest()->all());
     }
 
     /**
