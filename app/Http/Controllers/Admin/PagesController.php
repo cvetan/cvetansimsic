@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\StorePageRequest;
+use App\InputHandler\PagesInputHandler;
 use App\Models\Page;
 use Exception;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Response;
-use LaravelLocalization;
 
 class PagesController extends BaseAdminController
 {
@@ -36,13 +35,13 @@ class PagesController extends BaseAdminController
     /**
      * Store a newly created resource in storage.
      *
-     * @param StorePageRequest $request
+     * @param PagesInputHandler $inputHandler
      *
      * @return Response
      */
-    public function store(StorePageRequest $request)
+    public function store(PagesInputHandler $inputHandler)
     {
-        Page::create($this->formPage($request));
+        Page::create($inputHandler->format());
 
         flash(__('pages.created'))->success();
 
@@ -78,14 +77,14 @@ class PagesController extends BaseAdminController
     /**
      * Update the specified resource in storage.
      *
-     * @param StorePageRequest $request
-     * @param Page             $page
+     * @param PagesInputHandler $inputHandler
+     * @param Page              $page
      *
      * @return RedirectResponse
      */
-    public function update(StorePageRequest $request, Page $page)
+    public function update(PagesInputHandler $inputHandler, Page $page)
     {
-        $page->update($this->formPage($request));
+        $page->update($inputHandler->format());
 
         flash(__('pages.updated'))->success();
 
@@ -108,29 +107,5 @@ class PagesController extends BaseAdminController
         flash(__('pages.removed'))->success();
 
         return redirect()->route('admin.pages.index');
-    }
-
-    /**
-     * @param StorePageRequest $request
-     *
-     * @return array
-     */
-    private function formPage(StorePageRequest $request): array
-    {
-        $data = [
-            'active' => $request->has('active') ? true : false
-        ];
-
-        foreach (LaravelLocalization::getSupportedLanguagesKeys() as $lang) {
-            $data[$lang] = [
-                'name'            => $request->get("name_{$lang}"),
-                'slug'            => $request->get("slug_{$lang}"),
-                'content'         => $request->get("content_{$lang}"),
-                'title_tag'       => $request->get("title_tag_{$lang}"),
-                'description_tag' => $request->get("description_tag_{$lang}")
-            ];
-        }
-
-        return $data;
     }
 }

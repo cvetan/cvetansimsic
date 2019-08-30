@@ -20,7 +20,7 @@
     </div>
 </div>
 
-{{ Form::bsSwitchery('active', 'Page active', 'active', '#167CCB', isset($page) ? $page->active : false) }}
+{{ Form::bsSwitchery('active', __('pages.active'), 'active', '#167CCB', isset($page) ? $page->active : false) }}
 
 @include('components.form.errors')
 

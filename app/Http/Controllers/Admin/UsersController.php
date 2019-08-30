@@ -2,14 +2,18 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Requests\StoreUserRequest;
+use App\Models\User;
+use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class UsersController extends BaseAdminController
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function index()
     {
@@ -19,21 +23,22 @@ class UsersController extends BaseAdminController
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function create()
     {
+        return view('admin.users.create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
+     * @param StoreUserRequest $request
      *
-     * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreUserRequest $request)
     {
+        dd($request->all());
     }
 
     /**
@@ -41,7 +46,7 @@ class UsersController extends BaseAdminController
      *
      * @param int $id
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function show($id)
     {
@@ -50,34 +55,35 @@ class UsersController extends BaseAdminController
     /**
      * Show the form for editing the specified resource.
      *
-     * @param int $id
-     *
-     * @return \Illuminate\Http\Response
+     * @param User $user
      */
-    public function edit($id)
+    public function edit(User $user)
     {
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
-     * @param int                      $id
-     *
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @param User    $user
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, User $user)
     {
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param int $id
+     * @param User $user
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
+     *
+     * @throws Exception
      */
-    public function destroy($id)
+    public function destroy(User $user)
     {
+        $user->delete();
+
+        return redirect()->route('admin.users.index');
     }
 }
