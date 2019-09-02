@@ -10,4 +10,9 @@ class UserTranslation extends Model
      * @var bool
      */
     public $timestamps = false;
+
+    /**
+     * @var array
+     */
+    protected $guarded = ['id'];
 }

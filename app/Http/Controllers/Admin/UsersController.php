@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Events\AdminUserCreated;
 use App\InputHandler\UsersInputHandler;
 use App\Models\User;
 use Exception;
 use Illuminate\Contracts\View\Factory;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Response;
+use Illuminate\Routing\Redirector;
 use Illuminate\View\View;
 
 class UsersController extends BaseAdminController
@@ -35,10 +38,20 @@ class UsersController extends BaseAdminController
      * Store a newly created resource in storage.
      *
      * @param UsersInputHandler $inputHandler
+     *
+     * @return RedirectResponse|Redirector
      */
     public function store(UsersInputHandler $inputHandler)
     {
-        dd($inputHandler->getRequest()->all());
+        $user = User::create($inputHandler->format());
+
+        if ($user->is_admin) {
+            event(new AdminUserCreated($user));
+        }
+
+        flash(__('users.created'))->success();
+
+        return redirect()->route('admin.users.index');
     }
 
     /**
