@@ -21,7 +21,10 @@ class UsersController extends BaseAdminController
      */
     public function index()
     {
-        return view('admin.users.index');
+        $users = User::orderBy('id', 'desc')
+            ->paginate(10);
+
+        return view('admin.users.index', ['users' => $users]);
     }
 
     /**
@@ -57,12 +60,13 @@ class UsersController extends BaseAdminController
     /**
      * Display the specified resource.
      *
-     * @param int $id
+     * @param User $user
      *
-     * @return Response
+     * @return User
      */
-    public function show($id)
+    public function show(User $user)
     {
+        return $user;
     }
 
     /**
@@ -84,10 +88,16 @@ class UsersController extends BaseAdminController
      *
      * @param UsersInputHandler $inputHandler
      * @param User              $user
+     *
+     * @return RedirectResponse
      */
     public function update(UsersInputHandler $inputHandler, User $user)
     {
-        dd($inputHandler->getRequest()->all());
+        $user->update($inputHandler->format());
+
+        flash(__('users.updated'));
+
+        return redirect()->route('admin.users.index');
     }
 
     /**
@@ -102,6 +112,8 @@ class UsersController extends BaseAdminController
     public function destroy(User $user)
     {
         $user->delete();
+
+        flash(__('users.removed'));
 
         return redirect()->route('admin.users.index');
     }
