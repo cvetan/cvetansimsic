@@ -8,5 +8,6 @@ return [
     'created'          => 'User has been created.',
     'updated'          => 'User has been updated.',
     'removed'          => 'User has been removed.',
-    'is_admin'         => 'Is admin?'
+    'is_admin'         => 'Is admin?',
+    'admin_account'    => 'Admin account'
 ];

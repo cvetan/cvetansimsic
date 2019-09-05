@@ -7,10 +7,11 @@ use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Hash;
+use Laracasts\Presenter\PresentableTrait;
 
 class User extends Authenticatable
 {
-    use Notifiable, Sluggable, Translatable;
+    use Notifiable, Sluggable, Translatable, PresentableTrait;
 
     /**
      * @var array
@@ -45,6 +46,11 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'is_admin'          => 'boolean'
     ];
+
+    /**
+     * @var string
+     */
+    protected $presenter = 'App\Presenters\UserPresenter';
 
     /**
      * @param string $password
