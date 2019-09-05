@@ -32,7 +32,7 @@
                     <th>{{ __('general.last_name') }}</th>
                     <th>{{ __('general.username') }}</th>
                     <th>{{ __('general.email') }}</th>
-                    <th>{{ __('users.admin_account') }}</th>
+                    <th>{{ __('users.account_type') }}</th>
                     <th>{{ __('general.actions') }}</th>
                 </tr>
             </thead>

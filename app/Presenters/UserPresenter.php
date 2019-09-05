@@ -12,10 +12,18 @@ class UserPresenter extends Presenter
      */
     public function adminAccount(): string
     {
+        $html = [];
+
         if ($this->entity->is_admin) {
-            return '<span class="fa fa-check text-success"></span>';
+            $html[] = '<span class="badge badge-success">';
+            $html[] = __('users.admin_account');
+            $html[] = '</span>';
+        } else {
+            $html[] = '<span class="badge badge-danger">';
+            $html[] = __('users.user_account');
+            $html[] = '</span>';
         }
 
-        return '<span class="fa fa-times text-danger"></span>';
+        return implode('', $html);
     }
 }

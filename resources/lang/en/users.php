@@ -9,5 +9,7 @@ return [
     'updated'          => 'User has been updated.',
     'removed'          => 'User has been removed.',
     'is_admin'         => 'Is admin?',
-    'admin_account'    => 'Admin account'
+    'account_type'     => 'Account type',
+    'admin_account'    => 'Admin account',
+    'user_account'     => 'User account'
 ];
