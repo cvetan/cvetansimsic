@@ -111,6 +111,8 @@ class UsersController extends BaseAdminController
      * @return Response
      *
      * @throws Exception
+     *
+     * @todo Add FK validation checks
      */
     public function destroy(User $user)
     {

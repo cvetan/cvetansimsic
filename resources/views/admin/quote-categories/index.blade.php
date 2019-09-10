@@ -49,9 +49,15 @@
                         <td>{{ $category->name }}</td>
                         <td><span class="{{ $category->icon }}"></span></td>
                         <td>
-                            @include('admin.quote-categories.partials._buttons', ['category' => $category])
+                            @include('admin.partials._buttons', [
+                                'editLink'      => route('admin.quote-categories.edit', ['quoteCategory' => $category->id]),
+                                'deleteLink'    => route('admin.quote-categories.destroy', ['quoteCategory' => $category->id])
+                            ])
 
-                            @include('admin.quote-categories.partials._buttons_xs', ['category' => $category])
+                            @include('admin.partials._buttons_xs', [
+                                'editLink'      => route('admin.quote-categories.edit', ['quoteCategory' => $category->id]),
+                                'deleteLink'    => route('admin.quote-categories.destroy', ['quoteCategory' => $category->id])
+                            ])
                         </td>
                     </tr>
                 @endforeach

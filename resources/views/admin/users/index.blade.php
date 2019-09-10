@@ -46,7 +46,19 @@
                         <td>{{ $user->username }}</td>
                         <td>{{ $user->email }}</td>
                         <td>{!! $user->present()->adminAccount() !!}</td>
-                        <td></td>
+                        <td>
+                            @include('admin.partials._buttons', [
+                                'showLink' => route('admin.users.show', ['user' => $user->id]),
+                                'editLink' => route('admin.users.edit', ['user' => $user->id]),
+                                'deleteLink' => route('admin.users.destroy', ['user' => $user->id])
+                            ])
+
+                            @include('admin.partials._buttons_xs', [
+                                'showLink' => route('admin.users.show', ['user' => $user->id]),
+                                'editLink' => route('admin.users.edit', ['user' => $user->id]),
+                                'deleteLink' => route('admin.users.destroy', ['user' => $user->id])
+                            ])
+                        </td>
                     </tr>
                 @endforeach
             </tbody>
