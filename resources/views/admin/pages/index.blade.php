@@ -41,9 +41,17 @@
                         <td>{{ $page->name }}</td>
                         <td>{{ $page->slug }}</td>
                         <td>
-                            @include('admin.pages.partials._buttons', ['page' => $page])
+                            @include('admin.partials._buttons', [
+                                'showLink'      => route('admin.pages.show', ['page' => $page->id]),
+                                'editLink'      => route('admin.pages.edit', ['page' => $page->id]),
+                                'deleteLink'    => route('admin.pages.destroy', ['page' => $page->id])
+                            ])
 
-                            @include('admin.pages.partials._buttons_xs', ['page' => $page])
+                            @include('admin.partials._buttons_xs',  [
+                                'showLink'      => route('admin.pages.show', ['page' => $page->id]),
+                                'editLink'      => route('admin.pages.edit', ['page' => $page->id]),
+                                'deleteLink'    => route('admin.pages.destroy', ['page' => $page->id])
+                            ])
                         </td>
                     </tr>
                 @endforeach
