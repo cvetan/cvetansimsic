@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Events\AdminUserCreated;
 use App\InputHandler\UsersInputHandler;
 use App\Models\User;
+use Carbon\Carbon;
 use Exception;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\RedirectResponse;
@@ -47,6 +48,8 @@ class UsersController extends BaseAdminController
     public function store(UsersInputHandler $inputHandler)
     {
         $user = User::create($inputHandler->format());
+
+        $user->email_verified_at = Carbon::now();
 
         if ($user->is_admin) {
             event(new AdminUserCreated($user));
