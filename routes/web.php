@@ -26,7 +26,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function () {
     });
 });
 
-Route::namespace('Admin')->prefix('admin')->as('admin.')->group(function () {
+Route::namespace('Admin')->prefix('admin')->as('admin.')->middleware(['auth', 'admin'])->group(function () {
     Route::get('/', 'DashboardController@index')->name('dashboard');
 
     Route::resource('pages', 'PagesController');
