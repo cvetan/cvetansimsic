@@ -39,7 +39,7 @@
 
         <!-- LOGO -->
         <div class="topbar-left">
-            <a href="/" class="logo">
+            <a href="{{ route('admin.dashboard') }}" class="logo">
                 <span>
                     Admin<span>to</span>
                 </span>

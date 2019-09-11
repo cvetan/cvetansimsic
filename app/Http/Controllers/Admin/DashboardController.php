@@ -14,4 +14,12 @@ class DashboardController extends BaseAdminController
     {
         return view('admin.dashboard');
     }
+
+    /**
+     * @return Factory|View
+     */
+    public function profile(): View
+    {
+        return view('admin.profile');
+    }
 }

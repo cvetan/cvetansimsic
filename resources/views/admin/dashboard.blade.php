@@ -1,10 +1,9 @@
 @extends('layouts.admin')
 
-@section('title', 'Dashboard :: Welcome')
+@section('title', __('dashboard.welcome'))
 
-@section('pageTitle', 'Dashboard :: Welcome')
+@section('pageTitle', __('dashboard.welcome'))
 
 @section('content')
-    Dashboard Content <br>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusamus ea excepturi exercitationem, iste laboriosam nam nesciunt quisquam quo voluptates.
+    Dashboard page
 @endsection

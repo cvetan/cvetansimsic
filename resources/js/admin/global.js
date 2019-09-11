@@ -22,7 +22,7 @@ $(".tab-content .tab-pane:first").addClass("in active");
                 showCancelButton: true,
                 confirmButtonClass: 'btn-danger waves-effect waves-light confirm-remove-btn',
                 confirmButtonText: CvetanSimsic.tr_yes_remove
-            }, function(isConfirm) {
+            }, function (isConfirm) {
                 if (isConfirm) {
                     $('.remove-form').trigger('submit');
                 }
@@ -38,3 +38,9 @@ $(".tab-content .tab-pane:first").addClass("in active");
         "use strict";
         $.SweetAlert.init()
     }(window.jQuery);
+
+$('.admin-logout-trigger').click(function (e) {
+    e.preventDefault();
+
+    $(this).parent().trigger('submit');
+});

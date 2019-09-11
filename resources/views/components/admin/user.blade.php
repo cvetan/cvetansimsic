@@ -10,15 +10,17 @@
     <h5><a href="#">Mat Helme</a></h5>
     <ul class="list-inline">
         <li>
-            <a href="#">
+            <a href="{{ route('admin.profile') }}">
                 <i class="zmdi zmdi-settings"></i>
             </a>
         </li>
 
         <li>
-            <a href="#" class="text-custom">
-                <i class="zmdi zmdi-power"></i>
-            </a>
+            {{ Form::open(['route' => 'logout', 'method' => 'POST']) }}
+                <a href="#" class="text-custom admin-logout-trigger">
+                    <i class="zmdi zmdi-power"></i>
+                </a>
+            {{ Form::close() }}
         </li>
     </ul>
 </div>

@@ -29,6 +29,8 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function () {
 Route::namespace('Admin')->prefix('admin')->as('admin.')->middleware(['auth', 'admin'])->group(function () {
     Route::get('/', 'DashboardController@index')->name('dashboard');
 
+    Route::get('/profile', 'DashboardController@profile')->name('profile');
+
     Route::resource('pages', 'PagesController');
 
     Route::resource('quote-categories', 'QuoteCategoriesController')->except('show');
