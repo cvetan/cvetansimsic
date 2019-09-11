@@ -29,10 +29,15 @@ class UsersInputHandler extends AbstractInputHandler
             'last_name'         => $this->request->get('last_name'),
             'username'          => $this->request->get('username'),
             'email'             => $this->request->get('email'),
-            'password'          => $this->request->get('password'),
             'is_admin'          => $this->request->has('is_admin') ? true : false,
             'email_verified_at' => Carbon::now()
         ];
+
+        $password = $this->request->get('password');
+
+        if ($password !== null) {
+            $data['password'] = $password;
+        }
 
         foreach (LaravelLocalization::getSupportedLanguagesKeys() as $lang) {
             $data[$lang] = [

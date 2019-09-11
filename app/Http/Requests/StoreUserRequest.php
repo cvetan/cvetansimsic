@@ -23,12 +23,21 @@ class StoreUserRequest extends FormRequest
      */
     public function rules()
     {
-        return [
+        $rules = [
             'first_name'      => 'required',
             'last_name'       => 'required',
-            'username'        => 'required|unique:users',
-            'email'           => 'required|email|unique:users',
-            'password'        => 'required|confirmed',
+            'username'        => 'required|unique:users,username',
+            'email'           => 'required|email|unique:users,email',
+            'password'        => 'required|confirmed'
         ];
+
+        if ($this->getMethod() === 'PATCH') {
+            $user = $this->segment(3);
+            $rules['username'] .= ",{$user},id";
+            $rules['email'] .= ",{$user},id";
+            $rules['password'] = 'confirmed';
+        }
+
+        return $rules;
     }
 }
