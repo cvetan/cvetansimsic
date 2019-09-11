@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
@@ -16,7 +18,7 @@ class LoginController extends Controller
     | redirecting them to your home screen. The controller uses a trait
     | to conveniently provide its functionality to your applications.
     |
-    */
+     */
 
     use AuthenticatesUsers;
 
@@ -30,10 +32,24 @@ class LoginController extends Controller
     /**
      * Create a new controller instance.
      *
-     * @return void
      */
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+
+    /**
+     * @param Request $request
+     * @param $user
+     *
+     * @return RedirectResponse
+     */
+    protected function authenticated(Request $request, $user)
+    {
+        if ($user->is_admin) {
+            return redirect()->route('admin.dashboard');
+        }
+
+        return redirect()->route('home');
     }
 }
