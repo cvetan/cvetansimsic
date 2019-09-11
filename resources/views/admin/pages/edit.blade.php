@@ -5,7 +5,7 @@
 @section('pageTitle', __('pages.edit_page'))
 
 @section('content')
-    {{ Form::model($page, ['route' => ['admin.pages.update', $page->id], 'method' => 'PUT']) }}
+    {{ Form::model($page, ['route' => ['admin.pages.update', $page->id], 'method' => 'PATCH']) }}
         @include('admin.pages.partials._form')
     {{ Form::close() }}
 @endsection
