@@ -31,6 +31,8 @@ Route::namespace('Admin')->prefix('admin')->as('admin.')->middleware(['auth', 'a
 
     Route::get('/profile', 'DashboardController@profile')->name('profile');
 
+    Route::post('/update-profile', 'DashboardController@updateProfile')->name('update-profile');
+
     Route::resource('pages', 'PagesController');
 
     Route::resource('quote-categories', 'QuoteCategoriesController')->except('show');
