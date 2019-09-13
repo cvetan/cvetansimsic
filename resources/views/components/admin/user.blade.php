@@ -2,12 +2,12 @@
 <div class="user-box">
     <div class="user-img">
         <img src="{{ asset('images/users/avatar-1.jpg') }}"
-             alt="user-img" title="Mat Helme"
+             alt="user-img" title="{{ auth()->user()->name() }}"
              class="img-circle img-thumbnail img-responsive">
         <div class="user-status offline"><i
                 class="zmdi zmdi-dot-circle"></i></div>
     </div>
-    <h5><a href="#">Mat Helme</a></h5>
+    <h5><a href="#">{{ auth()->user()->name() }}</a></h5>
     <ul class="list-inline">
         <li>
             <a href="{{ route('admin.profile') }}">
