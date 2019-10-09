@@ -18,9 +18,9 @@ class UsersController extends BaseAdminController
     /**
      * Display a listing of the resource.
      *
-     * @return Response
+     * @return Factory|View
      */
-    public function index()
+    public function index(): View
     {
         $users = User::orderBy('id', 'desc')
             ->paginate(10);
@@ -45,7 +45,7 @@ class UsersController extends BaseAdminController
      *
      * @return RedirectResponse|Redirector
      */
-    public function store(UsersInputHandler $inputHandler)
+    public function store(UsersInputHandler $inputHandler): RedirectResponse
     {
         $user = User::create($inputHandler->format());
 
@@ -94,7 +94,7 @@ class UsersController extends BaseAdminController
      *
      * @return RedirectResponse
      */
-    public function update(UsersInputHandler $inputHandler, User $user)
+    public function update(UsersInputHandler $inputHandler, User $user): RedirectResponse
     {
         $user->update($inputHandler->format());
 
@@ -108,13 +108,13 @@ class UsersController extends BaseAdminController
      *
      * @param User $user
      *
-     * @return Response
+     * @return RedirectResponse
      *
      * @throws Exception
      *
      * @todo Add FK validation checks
      */
-    public function destroy(User $user)
+    public function destroy(User $user): RedirectResponse
     {
         $user->delete();
 
