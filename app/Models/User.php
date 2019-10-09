@@ -81,4 +81,18 @@ class User extends Authenticatable
     {
         return $this->first_name . ' ' . $this->last_name;
     }
+
+    /**
+     * Returns user avatar image path.
+     *
+     * @return string
+     */
+    public function avatarImage(): string
+    {
+        if ($this->avatar !== null) {
+            return asset($this->avatar);
+        }
+
+        return asset('images/users/user-no-image.png');
+    }
 }

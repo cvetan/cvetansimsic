@@ -1,7 +1,7 @@
 <!-- User -->
 <div class="user-box">
     <div class="user-img">
-        <img src="{{ asset('images/users/avatar-1.jpg') }}"
+        <img src="{{ auth()->user()->avatarImage() }}"
              alt="user-img" title="{{ auth()->user()->name() }}"
              class="img-circle img-thumbnail img-responsive">
         <div class="user-status offline"><i
