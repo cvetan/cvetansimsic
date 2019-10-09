@@ -163,14 +163,12 @@ return [
         // Package Service Providers...
         Mcamara\LaravelLocalization\LaravelLocalizationServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
-        Laracasts\Utilities\JavaScript\JavaScriptServiceProvider::class,
+        // Laracasts\Utilities\JavaScript\JavaScriptServiceProvider::class,
 
         // Application Service Providers...
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
-        App\Providers\TelescopeServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         App\Providers\IdeHelperServiceProvider::class,
         App\Providers\ModelMakeExtensionServiceProvider::class,
