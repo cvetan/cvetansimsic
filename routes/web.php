@@ -41,3 +41,7 @@ Route::namespace('Admin')->prefix('admin')->as('admin.')->middleware(['auth', 'a
 
     Route::resource('users', 'UsersController');
 });
+
+Route::get('login-test', function () {
+    return view('auth.login-2');
+});

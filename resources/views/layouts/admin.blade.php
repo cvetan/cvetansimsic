@@ -31,115 +31,115 @@
 
 <body class="fixed-left">
 
-<!-- Begin page -->
-<div id="wrapper">
+    <!-- Begin page -->
+    <div id="wrapper">
 
-    <!-- Top Bar Start -->
-    <div class="topbar">
+        <!-- Top Bar Start -->
+        <div class="topbar">
 
-        <!-- LOGO -->
-        <div class="topbar-left">
-            <a href="{{ route('admin.dashboard') }}" class="logo">
-                <span>
-                    Admin<span>to</span>
-                </span>
-                <i class="zmdi zmdi-layers"></i>
-            </a>
+            <!-- LOGO -->
+            <div class="topbar-left">
+                <a href="{{ route('admin.dashboard') }}" class="logo">
+                    <span>
+                        Admin<span>to</span>
+                    </span>
+                    <i class="zmdi zmdi-layers"></i>
+                </a>
+            </div>
+
+            <!-- Button mobile view to collapse sidebar menu -->
+            <div class="navbar navbar-default" role="navigation">
+                <div class="container">
+
+                    <!-- Page title -->
+                    <ul class="nav navbar-nav navbar-left">
+                        <li>
+                            <button class="button-menu-mobile open-left">
+                                <i class="zmdi zmdi-menu"></i>
+                            </button>
+                        </li>
+                        <li>
+                            <h4 class="page-title">@yield('pageTitle', 'Dashboard :: Welcome')</h4>
+                        </li>
+                    </ul>
+
+                    @include('components.admin.notification_trigger_holder')
+
+                </div><!-- end container -->
+            </div><!-- end navbar -->
         </div>
-
-        <!-- Button mobile view to collapse sidebar menu -->
-        <div class="navbar navbar-default" role="navigation">
-            <div class="container">
-
-                <!-- Page title -->
-                <ul class="nav navbar-nav navbar-left">
-                    <li>
-                        <button class="button-menu-mobile open-left">
-                            <i class="zmdi zmdi-menu"></i>
-                        </button>
-                    </li>
-                    <li>
-                        <h4 class="page-title">@yield('pageTitle', 'Dashboard :: Welcome')</h4>
-                    </li>
-                </ul>
-
-                @include('components.admin.notification_trigger_holder')
-
-            </div><!-- end container -->
-        </div><!-- end navbar -->
-    </div>
-    <!-- Top Bar End -->
+        <!-- Top Bar End -->
 
 
-    <!-- ========== Left Sidebar Start ========== -->
-    <div class="left side-menu">
-        <div class="sidebar-inner slimscrollleft">
-            @include('components.admin.user')
+        <!-- ========== Left Sidebar Start ========== -->
+        <div class="left side-menu">
+            <div class="sidebar-inner slimscrollleft">
+                @include('components.admin.user')
 
-            @include('components.admin.sidebar')
+                @include('components.admin.sidebar')
+            </div>
+
         </div>
-
-    </div>
-    <!-- Left Sidebar End -->
+        <!-- Left Sidebar End -->
 
 
-    <!-- ============================================================== -->
-    <!-- Start right Content here -->
-    <!-- ============================================================== -->
-    <div class="content-page">
-        <!-- Start content -->
-        <div class="content">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="card-box">
-                            @include('flash::message')
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="content-page">
+            <!-- Start content -->
+            <div class="content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="card-box">
+                                @include('flash::message')
 
-                            @yield('content', 'No content for this page')
+                                @yield('content', 'No content for this page')
 
-                            {{ Form::open(['method' => 'DELETE', 'class' => 'remove-form']) }}
-                            {{ Form::close()}}
+                                {{ Form::open(['method' => 'DELETE', 'class' => 'remove-form']) }}
+                                {{ Form::close()}}
+                            </div>
                         </div>
                     </div>
-                </div>
-                <!-- End row -->
+                    <!-- End row -->
 
-            </div> <!-- container -->
+                </div> <!-- container -->
 
-        </div> <!-- content -->
+            </div> <!-- content -->
 
-        <footer class="footer">
-            2016 © Adminto.
-        </footer>
+            <footer class="footer">
+                2016 © Adminto.
+            </footer>
+
+        </div>
+        <!-- End content-page -->
+
+
+        <!-- ============================================================== -->
+        <!-- End Right content here -->
+        <!-- ============================================================== -->
+
+
+        <!-- Right Sidebar -->
+        <div class="side-bar right-bar">
+            @include('components.admin.notifications')
+        </div>
+        <!-- /Right-bar -->
 
     </div>
-    <!-- End content-page -->
+    <!-- END wrapper -->
 
 
-    <!-- ============================================================== -->
-    <!-- End Right content here -->
-    <!-- ============================================================== -->
+    <script>
+        let resizefunc = [];
+    </script>
 
-
-    <!-- Right Sidebar -->
-    <div class="side-bar right-bar">
-        @include('components.admin.notifications')
-    </div>
-    <!-- /Right-bar -->
-
-</div>
-<!-- END wrapper -->
-
-
-<script>
-    let resizefunc = [];
-</script>
-
-<!-- jQuery  -->
-<script src="{{ asset('js/adminto-vendor.js') }}"></script>
-@yield('js')
-@include('components.admin.serverjs')
-<script src="{{ asset('js/adminto-app.js') }}"></script>
-<script src="{{ asset('js/admin.js') }}"></script>
+    <!-- jQuery  -->
+    <script src="{{ asset('js/adminto-vendor.js') }}"></script>
+    @yield('js')
+    @include('components.admin.serverjs')
+    <script src="{{ asset('js/adminto-app.js') }}"></script>
+    <script src="{{ asset('js/admin.js') }}"></script>
 </body>
 </html>
