@@ -13,9 +13,10 @@ return [
     |
      */
 
-    'failed'             => 'These credentials do not match our records.',
-    'throttle'           => 'Too many login attempts. Please try again in :seconds seconds.',
-    'sign_in'            => 'Sign in',
-    'username_or_email'  => 'Username or email',
-    'login'              => 'Log In'
+    'failed'                 => 'These credentials do not match our records.',
+    'throttle'               => 'Too many login attempts. Please try again in :seconds seconds.',
+    'sign_in'                => 'Sign in',
+    'username_or_email'      => 'Username or email',
+    'login'                  => 'Log In',
+    'password_recovery_desc' => "Enter your email address and we'll send you an email with instructions to reset your password."
 ];

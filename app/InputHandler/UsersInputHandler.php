@@ -36,7 +36,7 @@ class UsersInputHandler extends AbstractInputHandler
         $password = $this->request->get('password');
 
         if ($password !== null) {
-            $data['password'] = $password;
+            $data['password'] = Hash::make($password);
         }
 
         foreach (LaravelLocalization::getSupportedLanguagesKeys() as $lang) {

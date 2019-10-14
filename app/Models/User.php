@@ -52,13 +52,13 @@ class User extends Authenticatable
      */
     protected $presenter = 'App\Presenters\UserPresenter';
 
-    /**
-     * @param string $password
-     */
-    public function setPasswordAttribute($password)
-    {
-        $this->attributes['password'] = Hash::make($password);
-    }
+    // /**
+    //  * @param string $password
+    //  */
+    // public function setPasswordAttribute($password)
+    // {
+    //     $this->attributes['password'] = Hash::make($password);
+    // }
 
     /**
      * Return the sluggable configuration array for this model.

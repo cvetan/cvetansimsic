@@ -28,7 +28,28 @@
     <script src="{{ asset('js/modernizr.min.js') }}"></script>
 </head>
 <body>
-    @yield('content', 'No content')
+    <div class="account-pages"></div>
+        <div class="clearfix"></div>
+        <div class="wrapper-page">
+            <div class="text-center">
+                <a href="/" class="logo" target="_blank">
+                    <span>Admin<span>to</span></span>
+                    <h5 class="text-muted m-t-0 font-600">Responsive Admin Dashboard</h5>
+                </a>
+            </div>
+            <div class="m-t-40 card-box">
+                <div class="text-center">
+                    <h4 class="text-uppercase font-bold m-b-0">@yield('title', config('app.name', 'Laravel'))</h4>
+
+                    @yield('page_description', '')
+                </div>
+                <div class="panel-body">
+                    @yield('content', '')
+                </div>
+            </div>
+            <!-- end card-box-->
+        </div>
+        <!-- end wrapper page -->
 
     <script>
         let resizefunc = [];
