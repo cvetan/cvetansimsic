@@ -27,4 +27,20 @@ class BlogCategory extends Model
         'created_at',
         'updated_at'
     ];
+
+    /**
+     * @return BelongsTo
+     */
+    public function parent(): BelongsTo
+    {
+        return $this->belongsTo('BlogCategory', 'id');
+    }
+
+    /**
+     * @return HasMany
+     */
+    public function children(): HasMany
+    {
+        return $this->hasMany('BlogCategory', 'parent');
+    }
 }
