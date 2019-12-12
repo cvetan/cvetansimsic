@@ -14,7 +14,7 @@ class StorePageRequest extends FormRequest
      *
      * @todo Add logic to authorize only admin accounts
      */
-    public function authorize()
+    public function authorize(): bool
     {
         return auth()->user()->is_admin;
     }
@@ -24,7 +24,7 @@ class StorePageRequest extends FormRequest
      *
      * @return array
      */
-    public function rules()
+    public function rules(): array
     {
         $rules = [];
 

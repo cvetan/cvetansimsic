@@ -11,7 +11,7 @@ class UpdateUserProfileRequest extends FormRequest
      *
      * @return bool
      */
-    public function authorize()
+    public function authorize(): bool
     {
         return auth()->user()->is_admin;
     }
@@ -21,7 +21,7 @@ class UpdateUserProfileRequest extends FormRequest
      *
      * @return array
      */
-    public function rules()
+    public function rules(): array
     {
         return [];
     }
