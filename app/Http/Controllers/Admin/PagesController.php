@@ -5,17 +5,18 @@ namespace App\Http\Controllers\Admin;
 use App\InputHandler\PagesInputHandler;
 use App\Models\Page;
 use Exception;
+use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Response;
+use Illuminate\View\View;
 
 class PagesController extends BaseAdminController
 {
     /**
      * Display a listing of the resource.
      *
-     * @return Response
+     * @return Factory|View
      */
-    public function index()
+    public function index(): View
     {
         return view('admin.pages.index', [
             'pages' => Page::orderBy('id', 'desc')->get()
@@ -25,9 +26,9 @@ class PagesController extends BaseAdminController
     /**
      * Show the form for creating a new resource.
      *
-     * @return Response
+     * @return Factory|View
      */
-    public function create()
+    public function create(): View
     {
         return view('admin.pages.create');
     }
@@ -37,9 +38,9 @@ class PagesController extends BaseAdminController
      *
      * @param PagesInputHandler $inputHandler
      *
-     * @return Response
+     * @return RedirectResponse
      */
-    public function store(PagesInputHandler $inputHandler)
+    public function store(PagesInputHandler $inputHandler): RedirectResponse
     {
         Page::create($inputHandler->format());
 
@@ -55,7 +56,7 @@ class PagesController extends BaseAdminController
      *
      * @return Page
      */
-    public function show(Page $page)
+    public function show(Page $page): Page
     {
         return $page;
     }
@@ -65,9 +66,9 @@ class PagesController extends BaseAdminController
      *
      * @param Page $page
      *
-     * @return Page
+     * @return Factory|View
      */
-    public function edit(Page $page)
+    public function edit(Page $page): View
     {
         return view('admin.pages.edit', [
             'page' => $page
@@ -82,8 +83,10 @@ class PagesController extends BaseAdminController
      *
      * @return RedirectResponse
      */
-    public function update(PagesInputHandler $inputHandler, Page $page)
-    {
+    public function update(
+        PagesInputHandler $inputHandler,
+        Page $page
+    ): RedirectResponse {
         $page->update($inputHandler->format());
 
         flash(__('pages.updated'))->success();
@@ -100,7 +103,7 @@ class PagesController extends BaseAdminController
      *
      * @throws Exception
      */
-    public function destroy(Page $page)
+    public function destroy(Page $page): RedirectResponse
     {
         $page->delete();
 

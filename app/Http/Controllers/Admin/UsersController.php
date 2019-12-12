@@ -9,8 +9,6 @@ use Carbon\Carbon;
 use Exception;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Response;
-use Illuminate\Routing\Redirector;
 use Illuminate\View\View;
 
 class UsersController extends BaseAdminController
@@ -31,9 +29,9 @@ class UsersController extends BaseAdminController
     /**
      * Show the form for creating a new resource.
      *
-     * @return Response
+     * @return Factory|View
      */
-    public function create()
+    public function create(): View
     {
         return view('admin.users.create');
     }
@@ -43,7 +41,7 @@ class UsersController extends BaseAdminController
      *
      * @param UsersInputHandler $inputHandler
      *
-     * @return RedirectResponse|Redirector
+     * @return RedirectResponse
      */
     public function store(UsersInputHandler $inputHandler): RedirectResponse
     {
@@ -67,7 +65,7 @@ class UsersController extends BaseAdminController
      *
      * @return User
      */
-    public function show(User $user)
+    public function show(User $user): User
     {
         return $user;
     }
@@ -79,7 +77,7 @@ class UsersController extends BaseAdminController
      *
      * @return Factory|View
      */
-    public function edit(User $user)
+    public function edit(User $user): View
     {
         return view('admin.users.edit', [
             'user' => $user

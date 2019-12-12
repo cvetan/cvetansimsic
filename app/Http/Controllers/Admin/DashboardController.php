@@ -30,7 +30,7 @@ class DashboardController extends BaseAdminController
      *
      * @return RedirectResponse
      */
-    public function updateProfile(UpdateUserProfileRequest $request)
+    public function updateProfile(UpdateUserProfileRequest $request): RedirectResponse
     {
         return redirect()->route('admin.profile');
     }
