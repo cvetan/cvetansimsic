@@ -11,7 +11,7 @@ class ModelMakeCommand extends Command
      *
      * @return string
      */
-    protected function getDefaultNamespace($rootNamespace)
+    protected function getDefaultNamespace($rootNamespace): string
     {
         return "{$rootNamespace}\Models";
     }
