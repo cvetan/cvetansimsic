@@ -50,13 +50,13 @@
                         <td><span class="{{ $category->icon }}"></span></td>
                         <td>
                             @include('admin.partials._buttons', [
-                                'editLink'      => route('admin.quote-categories.edit', ['quoteCategory' => $category->id]),
-                                'deleteLink'    => route('admin.quote-categories.destroy', ['quoteCategory' => $category->id])
+                                'editLink'      => route('admin.quote-categories.edit', ['quote_category' => $category->id]),
+                                'deleteLink'    => route('admin.quote-categories.destroy', ['quote_category' => $category->id])
                             ])
 
                             @include('admin.partials._buttons_xs', [
-                                'editLink'      => route('admin.quote-categories.edit', ['quoteCategory' => $category->id]),
-                                'deleteLink'    => route('admin.quote-categories.destroy', ['quoteCategory' => $category->id])
+                                'editLink'      => route('admin.quote-categories.edit', ['quote_category' => $category->id]),
+                                'deleteLink'    => route('admin.quote-categories.destroy', ['quote_category' => $category->id])
                             ])
                         </td>
                     </tr>

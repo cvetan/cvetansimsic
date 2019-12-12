@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Astrotomic\Translatable\Translatable;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class BlogCategory extends Model
 {
@@ -33,7 +35,7 @@ class BlogCategory extends Model
      */
     public function parent(): BelongsTo
     {
-        return $this->belongsTo('BlogCategory', 'id');
+        return $this->belongsTo('App\Models\BlogCategory', 'id');
     }
 
     /**
@@ -41,6 +43,6 @@ class BlogCategory extends Model
      */
     public function children(): HasMany
     {
-        return $this->hasMany('BlogCategory', 'parent');
+        return $this->hasMany('App\Models\BlogCategory', 'parent');
     }
 }
