@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 
 class IsAdmin
@@ -11,11 +12,11 @@ class IsAdmin
      * Handle an incoming request.
      *
      * @param Request $request
-     * @param  Closure  $next
+     * @param Closure $next
      *
-     * @return mixed
+     * @return RedirectResponse|mixed
      */
-    public function handle($request, Closure $next)
+    public function handle($request, Closure $next): RedirectResponse
     {
         if (auth()->user()->is_admin) {
             return $next($request);
