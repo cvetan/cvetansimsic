@@ -15,5 +15,4 @@ class ModelMakeCommand extends Command
     {
         return "{$rootNamespace}\Models";
     }
-
 }
