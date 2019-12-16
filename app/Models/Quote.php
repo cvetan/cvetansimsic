@@ -19,7 +19,7 @@ class Quote extends Model
     /**
      *@return BelongsTo
      */
-    public function quoteCategory()
+    public function quoteCategory(): BelongsTo
     {
         return $this->belongsTo('App\Models\QuoteCategory');
     }
