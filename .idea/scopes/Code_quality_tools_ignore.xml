@@ -1,0 +1,3 @@
+<component name="DependencyValidationManager">
+  <scope name="Code quality tools ignore" pattern="file[cvetansimsic]:database//*||file[cvetansimsic]:resources//*||file[cvetansimsic]:storage//*||file[cvetansimsic]:tests//*||file[cvetansimsic]:vendor//*" />
+</component>

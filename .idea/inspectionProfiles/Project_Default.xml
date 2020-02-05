@@ -1,0 +1,46 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="MessDetectorValidationInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <scope name="Code quality tools ignore" level="WARNING" enabled="false">
+        <option name="customRulesets">
+          <list>
+            <RulesetDescriptor>
+              <option name="name" value="Laravel PHPMD ruleset" />
+              <option name="path" value="$PROJECT_DIR$/phpmd.xml" />
+            </RulesetDescriptor>
+          </list>
+        </option>
+      </scope>
+      <option name="customRulesets">
+        <list>
+          <RulesetDescriptor>
+            <option name="name" value="Laravel PHPMD ruleset" />
+            <option name="path" value="$PROJECT_DIR$/phpmd.xml" />
+          </RulesetDescriptor>
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PhpCSFixerValidationInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <scope name="Code quality tools ignore" level="WARNING" enabled="false">
+        <option name="CODING_STANDARD" value="PSR2" />
+      </scope>
+      <option name="CODING_STANDARD" value="PSR2" />
+    </inspection_tool>
+    <inspection_tool class="PhpCSValidationInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <scope name="Code quality tools ignore" level="WARNING" enabled="false">
+        <option name="CODING_STANDARD" value="Custom" />
+        <option name="CUSTOM_RULESET_PATH" value="$PROJECT_DIR$/phpcs.xml" />
+        <option name="SHOW_SNIFF_NAMES" value="true" />
+        <option name="EXTENSIONS" value="php,js,css,inc" />
+      </scope>
+      <option name="CODING_STANDARD" value="Custom" />
+      <option name="CUSTOM_RULESET_PATH" value="$PROJECT_DIR$/phpcs.xml" />
+      <option name="SHOW_SNIFF_NAMES" value="true" />
+      <option name="EXTENSIONS" value="php,js,css,inc" />
+    </inspection_tool>
+    <inspection_tool class="PhpUndefinedClassInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="DONT_REPORT_MULTI_RESOLVE" value="true" />
+    </inspection_tool>
+  </profile>
+</component>
