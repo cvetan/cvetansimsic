@@ -34,3 +34,4 @@ _ide_helper_models.php
 
 .vagrant
 .php_cs.cache
+.DS_Store
